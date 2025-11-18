@@ -20,11 +20,15 @@ const allowedOrigins = [
     "http://localhost:3001",
     "https://nextjs-kambaz-git-a5-tanishq-neelas-projects.vercel.app",
     "https://nextjs-kambaz.vercel.app",
+    "https://nextjs-kambaz-dz19wx6ii-tanishq-neelas-projects.vercel.app",
 ];
 
 if (process.env.CLIENT_URL) {
     allowedOrigins.push(process.env.CLIENT_URL);
 }
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
     credentials: true,
@@ -53,8 +57,7 @@ const sessionOptions = {
         maxAge: 24 * 60 * 60 * 1000
     }
 };
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 app.use(session(sessionOptions));
 
 
