@@ -24,6 +24,7 @@ const allowedOrigins = [
     "https://nextjs-kambaz-git-a5-tanishq-neelas-projects.vercel.app",
     "https://nextjs-kambaz.vercel.app",
     "https://nextjs-kambaz-dz19wx6ii-tanishq-neelas-projects.vercel.app",
+    "https://nextjs-kambaz-git-a6-tanishq-neelas-projects.vercel.app"
 ];
 
 if (process.env.CLIENT_URL) {
