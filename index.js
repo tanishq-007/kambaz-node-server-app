@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from "mongoose";
 import Hello from "./Hello.js"
 import Lab5 from './Lab5/index.js';
 import cors from "cors";
@@ -11,6 +12,8 @@ import ModuleRoutes from './Kambaz/Modules/route.js';
 import AssignmentRoutes from './Kambaz/Assignments/route.js';
 import EnrollmentRoutes from "./Kambaz/Enrollments/route.js";
 
+const CONNECTION_STRING=process.env.DATABASE_CONNECTION_STRING || "mongodb://localhost:27017"
+mongoose.connect(CONNECTION_STRING)
 const app = express();
 
 const isProduction = process.env.NODE_ENV === 'production';
